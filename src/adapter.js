@@ -2,15 +2,13 @@ class Adapter{
   constructor(baseURL) {
     this.baseURL = baseURL
   }
-
   loadContent = () => {
     document.addEventListener("DOMContentLoaded", () => {
       this.loadRandomQuote();
-      let entry = new Entry();
-      entry.loadEntries();
+      // let entry = new Entry();
+      this.loadEntries();
     })
   }
-
   loadRandomQuote = () => {
     fetch(`${this.baseURL}/quotes/random`)
     .then(resp => resp.json())
@@ -19,9 +17,17 @@ class Adapter{
       quote.render();
     })
   }
-
-
-
-
-
+  loadEntries = () => {
+    fetch(`${this.baseURL}/entries`)
+    .then(resp => resp.json())
+    .then(entries => {
+      // entry class
+      // console.log(entries);
+      console.log(entries)
+      entries.forEach(e => {
+        let entry = new Entry(e.id, e.body, e.time_interval)
+        entry.render();
+      })
+    })
+  }
 }
