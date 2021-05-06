@@ -12,13 +12,9 @@ class Entry {
   render() {
     let p = document.createElement("p");
     // p.innerText = this.body + `   Time interval: ${this.timeInterval}`
-
     p.innerHTML = `
-      ${this.body} <span> Time interval: ${this.timeInterval} </span>
+      ${this.body} <i> Time interval: ${this.timeInterval} </i>
     `
-
     Entry.entriesContainer.appendChild(p);
-    console.log(this.id)
   }
-
 }

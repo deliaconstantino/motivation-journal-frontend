@@ -5,7 +5,6 @@ class Adapter{
   loadContent = () => {
     document.addEventListener("DOMContentLoaded", () => {
       this.loadRandomQuote();
-      // let entry = new Entry();
       this.loadEntries();
     })
   }
@@ -21,8 +20,6 @@ class Adapter{
     fetch(`${this.baseURL}/entries`)
     .then(resp => resp.json())
     .then(entries => {
-      // entry class
-      // console.log(entries);
       console.log(entries)
       entries.forEach(e => {
         let entry = new Entry(e.id, e.body, e.time_interval)
