@@ -1,7 +1,8 @@
 const baseEntriesURL = "http://localhost:3000/api/v1/entries"
 const baseQuoteURL = "http://localhost:3000/api/v1/quotes"
+// keywords will be a class
 
-const quoteContainer = document.getElementById("quote container");
+const quoteContainer = document.getElementById("quote-container");
 
 document.addEventListener("DOMContentLoaded", () => {
   loadRandomQuote()
@@ -12,6 +13,7 @@ function loadRandomQuote() {
   fetch(baseQuoteURL)
   .then(resp => resp.json())
   .then(quotes => {
+    //put in a class
     const index = Math.floor(Math.random() * 10);
     const h2 = document.createElement("H2");
     h2.innerText = quotes[index].body
@@ -26,6 +28,7 @@ function loadEntries() {
   fetch(baseEntriesURL)
   .then(resp => resp.json())
   .then(entries => {
+    // entry class
     // console.log(entries);
     console.log("entries fetch")
   })
