@@ -4,9 +4,13 @@ body {
   font-size: 1rem;
 }
 
+/* h1 {
+  color: rgb(227, 86, 61);
+} */
+
 
 .navbar-light .navbar-brand {
-  color: rgb(209,88,66);
+  color: rgb(209, 116, 66);
   font-size: 1.5rem;
 }
 
@@ -24,13 +28,17 @@ body {
   /* margin-top: 3rem; */
   font-size: 1.25rem;
   color: #fff;
-  font-family: 'Satisfy', cursive;
+  font-family: sans-serif, Helvetica, Arial;
+  font-style: italic;
+  /* font-family: 'Satisfy'; */
   min-height: 10% !important;
 }
 
+/* background-image: var(--bs-gradient); */
 
-
-.bg-image {
-  background-repeat: no-repeat;
-  background-size: auto;
+.bg-image .shadow-2-strong {
+  background-repeat: space repeat;
+  /* background-repeat: repeat-y; */
+  /* size: 50px; */
+  /* background-size: 500px; */
 }

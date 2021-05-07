@@ -25,10 +25,27 @@
       color: #fff;
       text-align: center;
     } */
+
+    /* background */
+    #intro {
+      background-image: url("img/lemon-print.png");
+
+    }
+
+    /* Height for devices larger than 576px */
+    @media (min-width: 992px) {
+      #intro {
+        margin-top: -58.59px;
+      }
+    }
+    /* background */
   </style>
 
 </head>
 <body>
+
+  <div id="intro" class="bg-image shadow-2-strong">
+
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
@@ -71,22 +88,9 @@
     <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,224L30,240C60,256,120,288,180,266.7C240,245,300,171,360,165.3C420,160,480,224,540,213.3C600,203,660,117,720,101.3C780,85,840,139,900,170.7C960,203,1020,213,1080,224C1140,235,1200,245,1260,224C1320,203,1380,149,1410,122.7L1440,96L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path></svg> -->
   </header>
 
-<!-- bootstrap grid start -->
-  <!-- use auto sizing to fit -->
-  <!-- <div class="container-md">
-    <div class="row">
-      <div class="col-sm">1</div>
-      <div class="col-sm">2</div>
-      <div class="col-sm">3</div>
-    </div>
-    <div class="row">
-      <div class="col-sm">1</div>
-      <div class="col-sm">2</div>
-    </div>
-  </div> -->
-  <!-- auto size to fit end -->
 
-  <br>
+  <div class="container">
+    <div class="p-3 mb-2 bg-white text-dark">
   <!-- opening paragraph start -->
   <div class="container">
     <h1>Welcome to Motivation Journal</h1>
@@ -97,7 +101,6 @@
           <p>Use the timer to set how long you'd like to write today. Just 2 minutes can be a powerful amount of time!</p>
         </div>
       </div>
-
     </div>
   </div>
   <!-- opening paragraph end -->
@@ -152,49 +155,18 @@
       </div>
     </div>
   </div>
-
   <!-- nested grid end -->
   <br><br><br>
-<!-- nested grid for entries container start -->
-<!-- <div class="container">
-  <h3>Selected Journal Entries:</h3>
-  <br>
-  <div class="row">
-
-
-    <div class="col-sm-7">
-      <div class="row">
-        <div>
-
-        </div>
-        <div class="container" id="entries-container">
-
-        </div>
+  <!-- entries basic container start -->
+      <div class="container">
+        <h3>Selected Journal Entries</h3>
+        <br>
+        <div class="container" id="entries-container"></div>
       </div>
+<!-- entries basic container end -->
     </div>
-
-    <div class="col-sm-5">
-      <img src="img/green-tree-clipart.png" width="400" height="400"/>
-    </div>
-
-  </div>
-</div> -->
-
-<!-- nested grid for entries container end -->
-
-<!-- entries basic container start -->
-<div class="container">
-  <h3>Selected Journal Entries</h3>
-  <br>
-  <div class="container" id="entries-container">
-
   </div>
 </div>
-<!-- entries basic container end -->
-
-
-
-
 
   <script src="src/entry.js"></script>
   <script src="src/quote.js"></script>
