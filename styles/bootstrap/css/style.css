@@ -4,6 +4,8 @@ body {
   font-size: 1rem;
 }
 
+
+
 .gradient {
   background: rgb(209,88,66);
   background: linear-gradient(
@@ -18,4 +20,5 @@ body {
   font-size: 1.25rem;
   color: #fff;
   font-family: 'Satisfy', cursive;
+  min-height: 10% !important;
 }
