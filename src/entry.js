@@ -10,13 +10,13 @@ class Entry {
   static entriesContainer = document.getElementById("entries-container");
 
   render() {
-    let div = document.createElement('div');
-    let p = document.createElement("p");
+    let ul = document.createElement('ul');
+    let li = document.createElement("li");
     // p.innerText = this.body + `   Time interval: ${this.timeInterval}`
-    p.innerHTML = `
-      ${this.body} <i> Time interval: ${this.timeInterval} </i>
+    li.innerHTML = `
+      <i> Time interval: ${this.timeInterval} </i> ${this.body}
     `
-    div.appendChild(p);
-    Entry.entriesContainer.appendChild(div);
+    ul.appendChild(li);
+    Entry.entriesContainer.appendChild(ul);
   }
 }
