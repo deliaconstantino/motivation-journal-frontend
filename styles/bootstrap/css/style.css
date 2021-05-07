@@ -12,3 +12,10 @@ body {
     rgba(228,251,77,0.7777485994397759) 100%
   );
 }
+
+.page-header {
+  /* margin-top: 3rem; */
+  font-size: 1.25rem;
+  color: #fff;
+  font-family: 'Satisfy', cursive;
+}
