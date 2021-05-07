@@ -53,28 +53,48 @@
     <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,224L30,240C60,256,120,288,180,266.7C240,245,300,171,360,165.3C420,160,480,224,540,213.3C600,203,660,117,720,101.3C780,85,840,139,900,170.7C960,203,1020,213,1080,224C1140,235,1200,245,1260,224C1320,203,1380,149,1410,122.7L1440,96L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path></svg> -->
   </header>
 
-  <section class="form"></section>
-
-
-    <div class="container" id="form-container">
-      <h3>Set a writing timer:</h3>
-      <form id="set-timer">
-        <input type="dropdown">
-      </form>
-      <button type="button" class="btn btn-outline-danger btn-lg">Timer</button>
-      <h3>Write a journal entry:</h3>
-      <form id="new-entry-form">
-        <input type="text">
-        <br><br>
-        <input type="submit">
-      </form>
-      <br>
-    </div>
-
-    <div class="container" id="entries-container">
-
-    </div>
+  <div class="container">
+    <p>Use this journal to write about anything - your hopes, dreams, short stories, even just your to do list for today! Getting your thoughts down on paper (or screen) is a great way to get them out of the back your consciousness and into a place where you can understand them. Use this journal to practice writing or simply to calm your mind. You can also set a writing timer for how long you'd like to write today. Even 2 minutes can be a powerful amount of time!</p>
   </div>
+
+  <br><br>
+
+  <section class="journal">
+
+      <div class="container" id="form-container">
+
+        <h2>Write a journal entry:</h2>
+        <!-- journal portion below -->
+        <br>
+        <div class="row g-5 align-items-center">
+
+          <div class="col-md-5">
+            <img src="img/green-tree-clipart.png" width="400" height="400" />
+          </div>
+
+          <div class="col-md-5">
+            <form id="new-entry-form">
+            <input type="textarea">
+            <br><br>
+            <input type="submit">
+            </form>
+            <br>
+          </div>
+        </div>
+      </div>
+
+  </section>
+
+  <br><br>
+
+    <section>
+      <div class="container" id="entries-container">
+        <h3>Selected journal Entries:</h3>
+        <br>
+
+      </div>
+    </section>
+
 
 
   <script src="src/entry.js"></script>
