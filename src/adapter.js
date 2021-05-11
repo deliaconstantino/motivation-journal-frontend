@@ -21,6 +21,7 @@ class Adapter{
     .then(resp => resp.json())
     .then(entries => {
       console.log(entries)
+      Entry.createEntriesUl();
       entries.forEach(e => {
         let entry = new Entry(e.id, e.body, e.time_interval)
         entry.render();

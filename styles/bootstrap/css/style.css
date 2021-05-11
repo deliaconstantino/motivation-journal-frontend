@@ -1,0 +1,57 @@
+html,
+body {
+  height: 100%;
+  font-size: 1rem;
+}
+
+/* h1 {
+  color: rgb(227, 86, 61);
+} */
+
+
+.navbar-light .navbar-brand {
+  color: rgb(209, 116, 66);
+  font-size: 1.5rem;
+}
+
+
+.gradient {
+  background: rgb(209,88,66);
+  background: linear-gradient(
+    135deg,
+    rgba(209,88,66,1) 0%,
+    rgba(228,251,77,0.7777485994397759) 100%
+  );
+}
+
+.page-header {
+  /* margin-top: 3rem; */
+  font-size: 1.25rem;
+  color: #fff;
+  font-family: sans-serif, Helvetica, Arial;
+  font-style: italic;
+  /* font-family: 'Satisfy'; */
+  min-height: 10% !important;
+}
+
+/* background-image: var(--bs-gradient); */
+
+.bg-image .shadow-2-strong {
+  background-repeat: space repeat;
+  /* background-repeat: repeat-y; */
+  /* size: 50px; */
+  /* background-size: 500px; */
+}
+/*
+.hourglass {
+  object-fit: contain;
+} */
+
+
+/* .col-8 .col-sm-4 .align-items-center .justify-content-center .settle-grid {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+} */
