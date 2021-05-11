@@ -112,13 +112,7 @@
     <br>
       <div class="row">
           <div class="col-8 col-sm-4 align-items-center justify-content-center" class="settle-grid">
-            <form id="trial-form">
-              <textarea class="form-control" id="body"></textarea>
-              <input name="keyword" list="keyword-names">
-              <datalist id="keyword-names"></datalist>
-              <input type="submit" value="Save" id="submit-entry">
-            </form>
-            <!-- <img src="img/real-hourglass.jpeg" height="200" width="250"/> -->
+            <img src="img/real-hourglass.jpeg" height="200" width="250"/>
           </div>
           <div class="col-8 col-sm-4 align-items-center justify-content-center" class="settle-grid">
             <br><br>
@@ -180,7 +174,11 @@
                     <div class="modal-body">
                       <!-- form in modal start -->
                       <form id="new-entry-form">
-                        <textarea class="form-control" id="body" rows="15"></textarea>
+                        <textarea class="form-control" id="body" rows="10"></textarea>
+                        <br>
+                        <label for="keywords">Create or select a keyword for your journal entry:</label>
+                        <input name="keyword" list="keyword-names" id="keywords">
+                        <datalist id="keyword-names"></datalist>
                         <br>
                         <input type="submit" value="Save" id="submit-entry">
                       </form>
