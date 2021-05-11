@@ -46,3 +46,12 @@ body {
 .hourglass {
   object-fit: contain;
 } */
+
+
+/* .col-8 .col-sm-4 .align-items-center .justify-content-center .settle-grid {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+} */
