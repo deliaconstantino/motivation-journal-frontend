@@ -118,9 +118,9 @@
             <br><br>
             <h4>Set your timer</h4>
             <p>
-            <select name="timer" id="timer-select">
+            <select name="timer" id="timer-select-min">
 
-              <option value="1">1</option>
+              <!-- <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
@@ -151,8 +151,9 @@
               <option value="27">27</option>
               <option value="28">28</option>
               <option value="29">29</option>
-              <option value="30">30</option>
-            </select> minutes </p>
+              <option value="30">30</option> -->
+            </select> minutes
+            <select name="timer" id="timer-select-sec"></select> seconds </p>
 
           </div>
           <div class="col-8 col-sm-4 align-items-center justify-content-center" class="settle-grid">
@@ -208,6 +209,7 @@
   </div>
 </div>
 
+  <script src="src/functionality.js"></script>
   <script src="src/keyword.js"></script>
   <script src="src/entry.js"></script>
   <script src="src/quote.js"></script>

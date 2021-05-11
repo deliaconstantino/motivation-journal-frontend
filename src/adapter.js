@@ -4,6 +4,9 @@ class Adapter{
   }
   loadContent = () => {
     document.addEventListener("DOMContentLoaded", () => {
+      let functionality = new Functionality();
+      functionality.renderTimerSelectOptions(Functionality.minuteSelect);
+      functionality.renderTimerSelectOptions(Functionality.secondSelect);
       this.loadRandomQuote();
       this.loadEntries();
       this.loadKeywordsToFrontend();
