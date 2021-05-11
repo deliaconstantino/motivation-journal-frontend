@@ -47,28 +47,29 @@
   <div id="intro" class="bg-image shadow-2-strong">
 
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="#">Motivation Journal</a>
+  <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+    <!-- <div class="container"> -->
+      <!-- <a class="navbar-brand" href="#">Motivation Journal</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0"> -->
           <!-- <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li> -->
-        </ul>
-        <span class="navbar-text">
-          When Life Gives You
-          <img src="img/lemon-half.png" alt="yellow half lemon" width="30" height="24" class="d-inline-block align-text-top">
-          ...
-        </span>
-      </div>
-    </div>
-  </nav>
+        <!-- </ul> -->
+        <!-- <span class="navbar-text"> -->
+          <!-- When Life Gives You -->
+          <!-- <img src="img/lemon-half.png" alt="yellow half lemon" width="30" height="24" class="d-inline-block align-text-top"> -->
+          <!-- ... -->
+        <!-- </span> -->
+      <!-- </div> -->
+    <!-- </div> -->
+  <!-- </nav>  -->
 
   <header class="page-header gradient">
+    <br><br><br>
     <div class="container pt-3">
       <div class="row align-items-center justify-content-center">
         <div class="col-md-5">
@@ -89,7 +90,7 @@
   </header>
 
 
-  <div class="container">
+  <div class="container container-md">
     <div class="p-3 mb-2 bg-white text-dark">
   <!-- opening paragraph start -->
   <div class="container">
@@ -111,8 +112,11 @@
     <br>
       <div class="row">
           <div class="col-8 col-sm-4 align-items-center justify-content-center" class="settle-grid">
-
-            <img src="img/real-hourglass.jpeg" height="200" width="250"/>
+            <form id="trial-form">
+              <textarea class="form-control" id="body"></textarea>
+              <input type="submit" value="Save" id="submit-entry">
+            </form>
+            <!-- <img src="img/real-hourglass.jpeg" height="200" width="250"/> -->
           </div>
           <div class="col-8 col-sm-4 align-items-center justify-content-center" class="settle-grid">
             <br><br>
@@ -204,6 +208,7 @@
   </div>
 </div>
 
+  <script scr="src/keyword.js"></script>
   <script src="src/entry.js"></script>
   <script src="src/quote.js"></script>
   <script src="src/adapter.js"></script>

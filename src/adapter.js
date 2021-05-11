@@ -6,6 +6,7 @@ class Adapter{
     document.addEventListener("DOMContentLoaded", () => {
       this.loadRandomQuote();
       this.loadEntries();
+      this.loadKeywords();
     })
   }
   loadRandomQuote = () => {
@@ -26,6 +27,18 @@ class Adapter{
         let entry = new Entry(e.id, e.body, e.time_interval)
         entry.render();
       })
+    })
+  }
+
+  loadKeywords = () => {
+    fetch(`${this.baseURL}/keywords`)
+    .then(resp => resp.json())
+    .then(json => {
+      // console.log(keywords)
+      for (const key of json) {
+        let newKeyword = new Keyword(k.id, k.name)
+        // console.log(key)
+      }
     })
   }
 }
