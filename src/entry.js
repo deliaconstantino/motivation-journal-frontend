@@ -6,7 +6,7 @@ class Entry {
     Entry.all.push(this);
   }
 
-  static all = [];
+  static all = []; //?? are deleted entries automatically removed from this array?
   static entriesContainer = document.getElementById("entries-container");
   static ul = document.createElement("ul");
   static newEntryForm = document.querySelector("#new-entry-form");
@@ -32,7 +32,32 @@ class Entry {
     li.innerHTML = `
       <i> Time interval: ${this.timeInterval} </i> ${this.body}
     `;
+    let deleteButton = document.createElement("button");
+    deleteButton.innerText = "delete"
+    deleteButton.setAttribute("id", this.id)
+    deleteButton.addEventListener("click", this.deleteEntry);
+    li.appendChild(deleteButton);
     Entry.ul.appendChild(li);
+  }
+
+  deleteEntry(e) {
+    let li = e.target.parentElement;
+    let id = e.target.id;
+    let configObj = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      }
+    };
+
+    fetch(`${baseEntriesURL}/${id}`, configObj)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      li.remove();
+    })
+    .catch( () => alert("could not delete this journal entry"))
   }
 
   static setTimer(e) {
@@ -57,7 +82,7 @@ class Entry {
   static createNewEntry(e) {
     e.preventDefault();
     let body = e.target.querySelector("#body");
-
+    debugger
     let data = {
       body: body.value,
       time_interval: Entry.numMille / 60000,
@@ -81,11 +106,9 @@ class Entry {
       .then((e) => {
         let entry = new Entry(e.id, e.body, e.time_interval);
         entry.render();
-        let modal = document.querySelector("#staticBackdrop");
-        // Window.clearTimeout(Entry.interval);
+        // let modal = document.querySelector("#staticBackdrop");
         body.value = "";
         alert("Journal entry saved!");
-        // TODO: clear timer
       })
       .catch(() => alert("Journal entry can't be blank"));
   }
