@@ -7,6 +7,8 @@ class Entry {
   }
 
   static all = []; //?? are deleted entries automatically removed from this array?
+  //?? better to use class of instance methods inside of classes? in which cases for which
+  //?? fetch post is no longer working
   static entriesContainer = document.getElementById("entries-container");
   static ul = document.createElement("ul");
   static newEntryForm = document.querySelector("#new-entry-form");
@@ -18,11 +20,12 @@ class Entry {
   static secondsString;
 
   static createEntriesUl() {
+    Entry.ul.setAttribute("class", "set-list-image");
     Entry.entriesContainer.appendChild(Entry.ul);
     Entry.timerButton.addEventListener("click", Entry.setTimer);
-    Entry.newEntryForm.addEventListener("submit", () => {
-      Entry.cancelTimer
-      Entry.createNewEntry
+    Entry.newEntryForm.addEventListener("submit", (e) => {
+      Entry.cancelTimer()
+      Entry.createNewEntry(e)
     });
     Entry.exitButton.addEventListener("click", Entry.cancelTimer)
   }
@@ -34,7 +37,8 @@ class Entry {
     `;
     let deleteButton = document.createElement("button");
     deleteButton.innerText = "delete"
-    deleteButton.setAttribute("id", this.id)
+    deleteButton.setAttribute("id", this.id);
+    deleteButton.setAttribute("class", "btn btn-outline-danger btn-sm");
     deleteButton.addEventListener("click", this.deleteEntry);
     li.appendChild(deleteButton);
     Entry.ul.appendChild(li);
@@ -82,7 +86,7 @@ class Entry {
   static createNewEntry(e) {
     e.preventDefault();
     let body = e.target.querySelector("#body");
-    debugger
+    // debugger
     let data = {
       body: body.value,
       time_interval: Entry.numMille / 60000,
