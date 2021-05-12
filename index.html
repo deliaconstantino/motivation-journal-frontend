@@ -73,9 +73,7 @@
     <div class="container pt-3">
       <div class="row align-items-center justify-content-center">
         <div class="col-md-5">
-          <div id="quote-container"></div>
-          <!-- <h2>You learn more from failure than from success. Don’t let it stop you. Failure builds character.</h2> -->
-          <!-- <h3>Author - Unknown</h3> -->
+          <div id="quote-container" class="quote"></div>
         </div>
         <div class="col-md-5">
           <img
@@ -171,6 +169,13 @@
   <!-- entries basic container start -->
       <div class="container">
         <h3>Selected Journal Entries</h3>
+
+        <form id="keyword-filter-form">
+          <label for="keywords">Filter by keyword:</label>
+          <input name="entry[keywords_attributes][0][name]" list="filter-keyword-names" id="keywords">
+          <datalist id="filter-keyword-names"></datalist>
+          <input type="submit" value="Filter">
+        </form>
         <br>
         <div class="container" id="entries-container"></div>
       </div>

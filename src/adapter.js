@@ -39,9 +39,9 @@ class Adapter{
     .then(keyword => {
       for (const value of keyword) {
         let newKeyword = new Keyword(value.id, value.name)
-        Keyword.renderKeywordDatalist();
       }
-
+        Keyword.renderKeywordDatalist(Keyword.datalist);
+        Keyword.renderKeywordDatalist(Keyword.filterDatalist);
     })
   }
 }

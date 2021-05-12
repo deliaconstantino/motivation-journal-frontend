@@ -28,6 +28,9 @@ class Entry {
       Entry.createNewEntry(e)
     });
     Entry.exitButton.addEventListener("click", Entry.cancelTimer)
+    Keyword.filterKeywordForm.addEventListener("submit", (e) => {
+      Entry.filterEntries(e);
+    })
   }
 
   render() {
@@ -125,4 +128,37 @@ class Entry {
       `Your ${Entry.minutesString}:${Entry.secondsString} writing timer is up! Don't forget to click the 'save' button below if you'd like to keep your entry.`
     );
   }
+
+  static removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+  }
+
+
+  static filterEntries(e) {
+    e.preventDefault();
+    let query = e.target.querySelector("#keywords");
+    let fetchURL;
+    if (query.value === "") {
+      fetchURL = baseEntriesURL
+    } else {
+      fetchURL = `${baseEntriesURL}?q=${query.value}`
+    }
+
+    fetch(fetchURL)
+    .then(resp => resp.json())
+    .then(entries => {
+      let ul = document.querySelector(".set-list-image");
+      Entry.removeAllChildNodes(ul);
+      if (entries.length > 0) {
+        entries.forEach(e => {
+          let entry = new Entry(e.id, e.body, e.time_interval)
+          entry.render();
+        })
+      }
+        query.value = "";
+    })
+  }
+
 }
