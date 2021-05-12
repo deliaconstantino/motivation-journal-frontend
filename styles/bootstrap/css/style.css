@@ -8,6 +8,14 @@ body {
   color: rgb(227, 86, 61);
 } */
 
+header h1, h3 {
+  color: white;
+}
+
+h1, h3, h4 {
+  color: orange;
+}
+
 
 .navbar-light .navbar-brand {
   color: rgb(209, 116, 66);

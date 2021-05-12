@@ -38,7 +38,7 @@ class Entry {
     let deleteButton = document.createElement("button");
     deleteButton.innerText = "delete"
     deleteButton.setAttribute("id", this.id);
-    deleteButton.setAttribute("class", "btn btn-outline-danger btn-sm");
+    deleteButton.setAttribute("class", "btn btn-outline-warning btn-sm");
     deleteButton.addEventListener("click", this.deleteEntry);
     li.appendChild(deleteButton);
     Entry.ul.appendChild(li);
