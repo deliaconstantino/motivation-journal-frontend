@@ -12,6 +12,7 @@ class Keyword {
     let options = []
     for (let i = 0; i < Keyword.all.length; i++) {
       options += `<option data-value="${Keyword.all[i].id}" value="${Keyword.all[i].name}"></option>`
+      // options += `<option id="${Keyword.all[i].id}" value="${Keyword.all[i].name}"></option>`
     }
     Keyword.datalist.innerHTML = options;
   }

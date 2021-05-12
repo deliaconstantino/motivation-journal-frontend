@@ -42,6 +42,7 @@ class Entry {
     deleteButton.addEventListener("click", this.deleteEntry);
     li.appendChild(deleteButton);
     Entry.ul.appendChild(li);
+    //add keyword rendering here, but link to keyword class
   }
 
   deleteEntry(e) {
@@ -85,11 +86,12 @@ class Entry {
 
   static createNewEntry(e) {
     e.preventDefault();
-    let body = e.target.querySelector("#body");
-    // debugger
+    let body = e.target.querySelector("#body")
+    const keyword = document.querySelector("#keywords").value;
     let data = {
       body: body.value,
       time_interval: Entry.numMille / 60000,
+      keywords_attributes: keyword
     };
 
     let configObj = {
@@ -108,9 +110,9 @@ class Entry {
         return response.json();
       })
       .then((e) => {
+        console.log(e)
         let entry = new Entry(e.id, e.body, e.time_interval);
         entry.render();
-        // let modal = document.querySelector("#staticBackdrop");
         body.value = "";
         alert("Journal entry saved!");
       })
