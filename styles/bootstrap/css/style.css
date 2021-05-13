@@ -8,6 +8,14 @@ body {
   color: rgb(227, 86, 61);
 } */
 
+.quote h3 {
+  color: white;
+}
+
+h1, h3, h4 {
+  color: orange;
+}
+
 
 .navbar-light .navbar-brand {
   color: rgb(209, 116, 66);
@@ -42,6 +50,10 @@ body {
   /* size: 50px; */
   /* background-size: 500px; */
 }
+
+/* .set-list-image {
+  list-style-image: url('img/lemon-half.png');
+} */
 /*
 .hourglass {
   object-fit: contain;

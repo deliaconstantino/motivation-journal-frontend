@@ -4,8 +4,12 @@ class Adapter{
   }
   loadContent = () => {
     document.addEventListener("DOMContentLoaded", () => {
+      let functionality = new Functionality();
+      functionality.renderTimerSelectOptions(Functionality.minuteSelect);
+      functionality.renderTimerSelectOptions(Functionality.secondSelect);
       this.loadRandomQuote();
       this.loadEntries();
+      this.loadKeywordsToFrontend();
     })
   }
   loadRandomQuote = () => {
@@ -26,6 +30,18 @@ class Adapter{
         let entry = new Entry(e.id, e.body, e.time_interval)
         entry.render();
       })
+    })
+  }
+
+  loadKeywordsToFrontend = () => {
+    fetch(`${this.baseURL}/keywords`)
+    .then(resp => resp.json())
+    .then(keyword => {
+      for (const value of keyword) {
+        let newKeyword = new Keyword(value.id, value.name)
+      }
+        Keyword.renderKeywordDatalist(Keyword.datalist);
+        Keyword.renderKeywordDatalist(Keyword.filterDatalist);
     })
   }
 }

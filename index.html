@@ -11,21 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Satisfy&display=swap" rel="stylesheet">
 
   <style>
-    /* [class*="col"] {
-      padding: 1rem;
-      background-color: #33b5e5;
-      border: 2px solid #fff;
-      color: #fff;
-      text-align: center;
-    }
-    [class*="con"] {
-      padding: 1rem;
-      background-color: #9e33e5;
-      border: 2px solid #fff;
-      color: #fff;
-      text-align: center;
-    } */
-
     /* background */
     #intro {
       background-image: url("img/lemon-print.png");
@@ -47,34 +32,33 @@
   <div id="intro" class="bg-image shadow-2-strong">
 
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="#">Motivation Journal</a>
+  <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+    <!-- <div class="container"> -->
+      <!-- <a class="navbar-brand" href="#">Motivation Journal</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0"> -->
           <!-- <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li> -->
-        </ul>
-        <span class="navbar-text">
-          When Life Gives You
-          <img src="img/lemon-half.png" alt="yellow half lemon" width="30" height="24" class="d-inline-block align-text-top">
-          ...
-        </span>
-      </div>
-    </div>
-  </nav>
+        <!-- </ul> -->
+        <!-- <span class="navbar-text"> -->
+          <!-- When Life Gives You -->
+          <!-- <img src="img/lemon-half.png" alt="yellow half lemon" width="30" height="24" class="d-inline-block align-text-top"> -->
+          <!-- ... -->
+        <!-- </span> -->
+      <!-- </div> -->
+    <!-- </div> -->
+  <!-- </nav>  -->
 
   <header class="page-header gradient">
+    <br><br><br>
     <div class="container pt-3">
       <div class="row align-items-center justify-content-center">
         <div class="col-md-5">
-          <div id="quote-container"></div>
-          <!-- <h2>You learn more from failure than from success. Don’t let it stop you. Failure builds character.</h2> -->
-          <!-- <h3>Author - Unknown</h3> -->
+          <div id="quote-container" class="quote"></div>
         </div>
         <div class="col-md-5">
           <img
@@ -89,7 +73,7 @@
   </header>
 
 
-  <div class="container">
+  <div class="container container-md">
     <div class="p-3 mb-2 bg-white text-dark">
   <!-- opening paragraph start -->
   <div class="container">
@@ -111,55 +95,22 @@
     <br>
       <div class="row">
           <div class="col-8 col-sm-4 align-items-center justify-content-center" class="settle-grid">
-
-            <img src="img/real-hourglass.jpeg" height="200" width="250"/>
+            <img src="img/sand-clock.svg" height="200" width="250"/>
           </div>
           <div class="col-8 col-sm-4 align-items-center justify-content-center" class="settle-grid">
-            <br><br>
+            <br><br><br>
             <h4>Set your timer</h4>
             <p>
-            <select name="timer" id="timer-select">
-
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-              <option value="16">16</option>
-              <option value="17">17</option>
-              <option value="18">18</option>
-              <option value="19">19</option>
-              <option value="20">20</option>
-
-              <option value="21">21</option>
-              <option value="22">22</option>
-              <option value="23">23</option>
-              <option value="24">24</option>
-              <option value="25">25</option>
-              <option value="26">26</option>
-              <option value="27">27</option>
-              <option value="28">28</option>
-              <option value="29">29</option>
-              <option value="30">30</option>
-            </select> minutes </p>
+            <select name="timer" id="timer-select-min">
+            </select> minutes
+            <select name="timer" id="timer-select-sec"></select> seconds </p>
 
           </div>
           <div class="col-8 col-sm-4 align-items-center justify-content-center" class="settle-grid">
-            <br><br>
+            <br><br><br><br>
               <!-- modal start Static backdrop type-->
               <!-- Button trigger modal -->
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="timer-button">
+              <button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="timer-button">
                 Start writing!
               </button>
 
@@ -169,12 +120,18 @@
                   <div class="modal-content">
                     <div class="modal-header">
                       <h5 class="modal-title" id="staticBackdropLabel">Journal Entry</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="exit-button"></button>
                     </div>
                     <div class="modal-body">
                       <!-- form in modal start -->
                       <form id="new-entry-form">
-                        <textarea class="form-control" id="body" rows="15"></textarea>
+                        <textarea class="form-control" id="body" rows="10"></textarea>
+                        <br>
+                        <label for="keywords">Create or select a keyword for your journal entry:</label>
+                        <!-- name="post[category_ids][]" -->
+                        <!-- post[categories_attributes][0][name] -->
+                        <input name="entry[keywords_attributes][0][name]" list="keyword-names" id="keywords">
+                        <datalist id="keyword-names"></datalist>
                         <br>
                         <input type="submit" value="Save" id="submit-entry">
                       </form>
@@ -188,6 +145,7 @@
                 </div>
               </div>
               <!-- modal end -->
+
           </div>
       </div>
   </div>
@@ -196,14 +154,24 @@
   <!-- entries basic container start -->
       <div class="container">
         <h3>Selected Journal Entries</h3>
+
+        <form id="keyword-filter-form">
+          <label for="keywords">Filter by keyword:</label>
+          <input name="entry[keywords_attributes][0][name]" list="filter-keyword-names" id="keywords">
+          <datalist id="filter-keyword-names"></datalist>
+          <input type="submit" value="Filter">
+        </form>
         <br>
-        <div class="container" id="entries-container"></div>
+        <div class="container overflow-hidden" id="entries-container"></div>
       </div>
 <!-- entries basic container end -->
     </div>
   </div>
 </div>
 
+  <!-- <script src="src/functionality.js"></script> -->
+  <script src="src/functionality.js"></script>
+  <script src="src/keyword.js"></script>
   <script src="src/entry.js"></script>
   <script src="src/quote.js"></script>
   <script src="src/adapter.js"></script>
