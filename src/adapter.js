@@ -56,9 +56,15 @@ class Adapter{
       })
       .then((e) => {
         console.log(e)
+        console.log(e.keywords)
         let entry = new Entry(e.id, e.body, e.time_interval);
         entry.render();
-        Functionality.resetEntryForm(bodyElement)
+
+        for (const value of e.keywords) {
+          new Keyword(value.id, value.name)
+        }
+
+        Functionality.resetEntryForm(bodyElement) //TODO add second version of this
         alert("Journal entry saved!");
       })
       .catch(() => alert("Journal entry can't be blank"));

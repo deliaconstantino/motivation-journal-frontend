@@ -18,4 +18,5 @@ class Keyword {
     }
     formID.innerHTML = options;
   }
+
 }
