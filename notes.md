@@ -18,6 +18,11 @@
 
 [] add red color to alert when journal entry does not save
 [] add more detail on how to use app to first paragraph blurb
+[] edit alert to say, you can also keeo writing or make some final changes by presssing ok to close the pop-up. Choose a keyword if desired
+[] chage keyword to say: "add a keyword?:"
+[] change keywords to populate in dropdown on clicking on filter form, NOT on page load
+[] add 'minutes' after time_interval amount for
+[] clear "add keyword" field after the entry saves
 
 [x]add option to journal entry where timer alert ONLY goes off if timer is set - otherwise free write, no alert popup
 
