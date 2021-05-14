@@ -44,4 +44,25 @@ class Adapter{
         Keyword.renderKeywordDatalist(Keyword.filterDatalist);
     })
   }
+
+  static addNewEntry = (baseEntriesURL, configObj, bodyElement) => {
+    fetch(baseEntriesURL, configObj)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((e) => {
+        console.log(e)
+        let entry = new Entry(e.id, e.body, e.time_interval);
+        entry.render();
+        Functionality.resetEntryForm(bodyElement)
+        // body.value = "";
+        alert("Journal entry saved!");
+      })
+      .catch(() => alert("Journal entry can't be blank"));
+  }
+
+  // static
 }

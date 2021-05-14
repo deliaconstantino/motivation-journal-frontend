@@ -9,6 +9,7 @@ class Keyword {
   static datalist = document.querySelector("#keyword-names");
   static filterDatalist = document.querySelector("#filter-keyword-names");
   static filterKeywordForm = document.querySelector("#keyword-filter-form");
+  static keywordBlankModal = document.querySelector("#keywords");
 
   static renderKeywordDatalist(formID) { //TODO only add if not there rather than re-adding every time
     let options = []
