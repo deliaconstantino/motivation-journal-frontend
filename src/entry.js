@@ -77,7 +77,7 @@ class Entry {
 
   static filterEntries(e) {
     e.preventDefault();
-    let query = e.target.querySelector("#keywords");
+    let query = e.target.querySelector("#keywords-filter");
     let fetchURL;
     if (query.value === "") {
       fetchURL = baseEntriesURL
