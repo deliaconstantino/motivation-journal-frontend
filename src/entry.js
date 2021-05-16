@@ -2,7 +2,7 @@ class Entry {
   constructor(id, body, time_interval) {
     this.id = id;
     this.body = body;
-    this.timeInterval = time_interval;
+    this.timeInterval = Entry.setTimeInterval(time_interval);
     Entry.all.push(this);
   }
 
@@ -12,10 +12,14 @@ class Entry {
   static ul = document.createElement("ul");
   static newEntryForm = document.querySelector("#new-entry-form");
 
+  static setTimeInterval(time_interval) {
+    return time_interval ? time_interval : "Free-write"
+  }
+
   render() {
     let li = document.createElement("li");
     li.innerHTML = `
-      <i> Time interval: ${this.timeInterval} </i> ${this.body}
+      <i> Time in Minutes - ${this.timeInterval} </i>: ${this.body}
     `;
     let deleteButton = document.createElement("button");
     deleteButton.innerText = "delete"
@@ -51,6 +55,8 @@ class Entry {
       time_interval: Functionality.numMille / 60000, //TODO : make this a more human readable about of time
       keywords_attributes: {name: Keyword.keywordBlankModal.value}
     };
+
+    console.log(data.time_interval)
 
     let configObj = {
       method: "POST",
