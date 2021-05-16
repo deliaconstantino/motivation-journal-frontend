@@ -6,8 +6,7 @@ class Entry {
     Entry.all.push(this);
   }
 
-  static all = []; //?? are deleted entries automatically removed from this array?
-  //?? better to use class or instance methods inside of classes? in which cases for which
+  static all = [];
   static entriesContainer = document.getElementById("entries-container");
   static ul = document.createElement("ul");
   static newEntryForm = document.querySelector("#new-entry-form");
@@ -46,17 +45,13 @@ class Entry {
   static createNewEntry(e) {
     e.preventDefault();
     let body = e.target.querySelector("#body")
-    // let keyword = document.querySelector("#keywords");
-    // const keyword = document.querySelector("#keywords").value;
+    let time = (Functionality.numMille / 60000).toFixed(2);
 
-    // console.log(keyword)
     let data = {
       body: body.value,
-      time_interval: Functionality.numMille / 60000, //TODO : make this a more human readable about of time
+      time_interval: time,
       keywords_attributes: {name: Keyword.keywordBlankModal.value}
     };
-
-    console.log(data.time_interval)
 
     let configObj = {
       method: "POST",

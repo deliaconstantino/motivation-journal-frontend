@@ -7,8 +7,8 @@ class Keyword {
 
   static all = [];
   static datalistAddKeyword = document.querySelector("#keyword-names");
-  static filterKeywordDatalist = document.querySelector("#filter-keyword-names");  //TODO, check if using?
-  static filterKeywordForm = document.querySelector("#keyword-filter-form"); //TODO, check if using?
+  static filterKeywordDatalist = document.querySelector("#filter-keyword-names");  //TODO, check if using
+  static filterKeywordForm = document.querySelector("#keyword-filter-form"); //TODO, check if using
   static keywordBlankModal = document.querySelector("#keywords");
   static keywordBlankFilter = document.querySelector("#keywords-filter")
 

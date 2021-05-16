@@ -5,7 +5,7 @@ class Functionality {
 
   static minuteSelect = document.querySelector("#timer-select-min");
   static secondSelect = document.querySelector("#timer-select-sec");
-  static timerButton = document.querySelector("#timer-button"); // ?change name to start writing button
+  static timerButton = document.querySelector("#timer-button");
   static exitButton = document.querySelector("#exit-button");
 
   static interval;

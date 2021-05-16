@@ -5,10 +5,10 @@
 [x] modal for new journal entry
 [x] set form for modal to persist journal entries
   [x] connect to backend DONE
-  [] fix journal entries display option when saved without a time interval
-  [] santitize time to more human-readable number before persisting
+  [x] fix journal entries display option when saved without a time interval
+  [x] santitize time to more human-readable number before persisting
   [x] add or create a keyword
-  [] set timer amount to save to a more readable number
+  [x] set timer amount to save to a more readable number
 [x] created timer functionality
   [x] create dropdown to choose integer amount of time 1 [] 30 min
   [x] create a settimeout method to timeout to that point
@@ -17,10 +17,10 @@
   [x] add seconds to timer
 
 
-[] add more detail on how to use app to first paragraph blurb
+[x] add more detail on how to use app to first paragraph blurb
 [x] change keyword to say: "add a keyword?:"
-[] change keywords to populate in dropdown on clicking on filter form, NOT on page load
-[] add 'minutes' after time_interval amount for
+[x] change keywords to populate in dropdown on clicking on filter form, NOT on page load
+[x] add 'minutes' after time_interval amount for
 [x] clear "add keyword" field on exit button pressed
 
 [x]add option to journal entry where timer alert ONLY goes off if timer is set - otherwise free write, no alert popup
