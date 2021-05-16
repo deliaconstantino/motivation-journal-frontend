@@ -12,17 +12,15 @@ class Keyword {
   static keywordBlankModal = document.querySelector("#keywords");
   static keywordBlankFilter = document.querySelector("#keywords-filter")
 
-  static renderKeywordDatalist(event) {  //TODO add a check for whether Keyword.all.length matches datalist size
+  static renderKeywordDatalist(event) {
     const datalist = event.target.parentElement.querySelector("datalist");
 
-    if (Keyword.all.length < datalist.childElementCount) {
+    if (Keyword.all.length > datalist.childElementCount) {
       for (let i = 0; i < Keyword.all.length; i++) {
         const option = document.createElement('option');
         option.value = Keyword.all[i].name;
         option.setAttribute("data-value", Keyword.all[i].id)
         datalist.appendChild(option);
-      // options += `<option data-value="${Keyword.all[i].id}" value="${Keyword.all[i].name}"></option>`
-      // event.target.parentElement.querySelector("datalist").append(`<option data-value="${Keyword.all[i].id}" value="${Keyword.all[i].name}"></option>`);
       }
     }
   }
