@@ -48,7 +48,7 @@ class Entry {
     // console.log(keyword)
     let data = {
       body: body.value,
-      time_interval: Functionality.numMille / 60000,
+      time_interval: Functionality.numMille / 60000, //TODO : make this a more human readable about of time
       keywords_attributes: {name: Keyword.keywordBlankModal.value}
     };
 

@@ -22,24 +22,25 @@ class Functionality {
   }
 
   static addAllEventListeners() {
-    Functionality.timerButton.addEventListener("click", (e) => { //TODO check if right method of call
-      Functionality.setTimer(e);
-    });
+    Functionality.timerButton.addEventListener(
+      "click",
+      Functionality.setTimer
+    );
 
     Keyword.keywordBlankModal.addEventListener(
       "click",
       Keyword.renderKeywordDatalist
-    )
+    );
 
-    Entry.newEntryForm.addEventListener("submit", (e) => { //see below for question
-      Functionality.resetEntryForm(e);
+    Entry.newEntryForm.addEventListener("submit", function (e) {
+      Functionality.resetTimer(e);
       Entry.createNewEntry(e);
     });
 
-    Functionality.exitButton.addEventListener( //?? why does this work and above format not work??
-      "click",
-      Functionality.resetEntryForm
-    );
+    Functionality.exitButton.addEventListener("click", function (e) {
+      Functionality.resetTimer(e);
+      Functionality.resetEntryForm(e);
+    });
 
     Keyword.filterKeywordForm.addEventListener(
       "submit",
@@ -73,13 +74,15 @@ class Functionality {
     }
   }
 
-  static resetEntryForm(bodyElement) {
-    //rename to resetTimer
+  static resetTimer(bodyElement) {
     Functionality.minuteSelect.value = "0";
     Functionality.secondSelect.value = "0";
     clearTimeout(Functionality.interval);
-    // Keyword.keywordBlankModal.value = ""; //this and below need to be called at a diff point resetEntryForm()
-    // bodyElement.value = ""; //TODO: this is not working with the exitButton
+  }
+
+  static resetEntryForm(e) {
+    document.querySelector("#body").value = "";
+    Keyword.keywordBlankModal.value = "";
   }
 
   static findHTMLandAddEventListeners() {

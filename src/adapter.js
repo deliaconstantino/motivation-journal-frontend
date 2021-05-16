@@ -40,7 +40,6 @@ class Adapter {
       .then((resp) => resp.json())
       .then((keyword) => {
         for (const value of keyword) {
-          // let newKeyword = new Keyword(value.id, value.name)
           new Keyword(value.id, value.name);
         }
       });
@@ -49,14 +48,10 @@ class Adapter {
   static addNewEntry = (baseEntriesURL, configObj, bodyElement) => {
     fetch(baseEntriesURL, configObj)
       .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
+        if (!response.ok) throw response.json();
         return response.json();
       })
       .then((e) => {
-        console.log(e);
-        console.log(e.keywords);
         let entry = new Entry(e.id, e.body, e.time_interval);
         entry.render();
 
@@ -64,11 +59,13 @@ class Adapter {
           new Keyword(value.id, value.name);
         }
 
-        Functionality.resetEntryForm(bodyElement); //TODO add second version of this
+        Functionality.resetEntryForm(e);
         alert("Journal entry saved!");
       })
-      .catch(() => {
-        alert("Journal entry can't be blank")
+      .catch((response) => {
+        response.then((json) => {
+          alert(json);
+        });
       });
   };
 
