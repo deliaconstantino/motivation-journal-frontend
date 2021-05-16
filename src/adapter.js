@@ -67,7 +67,9 @@ class Adapter {
         Functionality.resetEntryForm(bodyElement); //TODO add second version of this
         alert("Journal entry saved!");
       })
-      .catch(() => alert("Journal entry can't be blank"));
+      .catch(() => {
+        alert("Journal entry can't be blank")
+      });
   };
 
   static filterEntriesFetch(fetchURL, query) {

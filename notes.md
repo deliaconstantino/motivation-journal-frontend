@@ -28,5 +28,5 @@
 
 
 ## Extras
-[] use lemon-half png for bullet point image
 [] add padding to grid so text takes up less space
+[] fix datalist to display options on click
