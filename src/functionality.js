@@ -33,13 +33,13 @@ class Functionality {
     );
 
     Entry.newEntryForm.addEventListener("submit", function (e) {
-      Functionality.resetTimer(e);
+      Functionality.resetTimer();
       Entry.createNewEntry(e);
     });
 
-    Functionality.exitButton.addEventListener("click", function (e) {
-      Functionality.resetTimer(e);
-      Functionality.resetEntryForm(e);
+    Functionality.exitButton.addEventListener("click", function () {
+      Functionality.resetTimer();
+      Functionality.resetEntryForm();
     });
 
     Keyword.filterKeywordForm.addEventListener(
@@ -74,13 +74,13 @@ class Functionality {
     }
   }
 
-  static resetTimer(bodyElement) {
+  static resetTimer() {
     Functionality.minuteSelect.value = "0";
     Functionality.secondSelect.value = "0";
     clearTimeout(Functionality.interval);
   }
 
-  static resetEntryForm(e) {
+  static resetEntryForm() {
     document.querySelector("#body").value = "";
     Keyword.keywordBlankModal.value = "";
   }
